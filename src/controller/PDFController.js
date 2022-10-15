@@ -37,9 +37,40 @@ const createGeneralPdf = function (args, callback) {
 
 const generatePDF = async (req, res) => {
     try {
-        const payloadFinalInvoice = {
-            path: 'src/assets/FinalInvoice.html'
-        }
+      const tesTemplate = req.param("tes");
+      const payloadFinalInvoice = {
+        path: 'src/assets/FinalInvoice.html',
+        projectName: 'PROJECT TEST 22',
+        corporateName: 'Corporate 1',
+        corporateNPWP: 'xx.xxx.xxx.x-xxx.xxx',
+        amName: 'Maya Astuti',
+        amEmail: 'maya.astuti@dansmultipro.com',
+        addressStreetname: 'jalan kamboja',
+        addressDetail: 'Jakarta Selatan , DKI Jakarta 12512',
+        tanggalTagihan: '20 Jan 2022',
+        nomorTagihan: ' U2912398124',
+        billingCycle: '16',
+        invoiceAmonth: '11,010,000',
+        invoiceSubTotal: '10,000,000',
+        invoicePPN: '1,000,000',
+        invoiceMaterai: '10,000',
+        invoiceDueDate: '03 Feb 2022',
+        paymentChannel: 'Direct Debit',
+        bankName: '',
+        vaNumber: '',
+        invoicePPh23Amount: 0,
+        dateNow: '16 Oct 2022',
+        terbilang: null,
+        withSign: true,
+        isSynergyFlag: false,
+        keterangan: [],
+        isPPH23: false,
+        italicNoTagihan: false 
+      }
+      if (tesTemplate) {
+        payloadFinalInvoice.path = 'src/assets/Test.html'
+      }
+        const fileName = 'tes.pdf';
         createGeneralPdf(payloadFinalInvoice, function (err, buffer) {
             if (err) {
                 throw err;
