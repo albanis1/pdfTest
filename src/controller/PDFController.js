@@ -15,6 +15,9 @@ const createGeneralPdf = function (args, callback) {
       footer: {
         height: '27.5mm',
       },
+      orientation: 'portrait',
+      dpi: 200,
+      quality: 80,
       zoomFactor: '1',
       phantomPath: path.resolve(__dirname, '../../node_modules/phantomjs-prebuilt/bin/phantomjs'),
       localToRemoteUrlAccessEnabled: true,
