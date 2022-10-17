@@ -70,6 +70,9 @@ const generatePDF = async (req, res) => {
         isPPH23: false,
         italicNoTagihan: false 
       }
+      keterangan.push('Dokumen Bukti Potong dapat diupload melalui www.dsc.telkomsel.com paling lambat tanggal terakhir di bulan selanjutnya terhitung setelah payment dilakukan.');
+      keterangan.push('PPN dan atau PPnBM tidak dipungut berdasarkan PP No.27 Tahun 2017');
+      
       if (tesTemplate) {
         payloadFinalInvoice.path = 'src/assets/Test.html'
       }
