@@ -26,9 +26,12 @@ const createGeneralPdf = function (args, callback) {
     const fontPoppinsRegularPath = fs.readFileSync(path.resolve(__dirname, '../assets/fonts/Poppins-Regular.ttf'));
     const fontSemiBold = fs.readFileSync(path.resolve(__dirname, '../assets/fonts/Poppins-SemiBold.otf'));
     const fontTelkomsel = fs.readFileSync(path.resolve(__dirname, '../assets/fonts/TelkomselBatikSans-Bold.ttf'));
+    const fontOble = fs.readFileSync(path.resolve(__dirname, '../assets/fonts/Objectivity-Regular.otf'));
     args.fontTelkomsel = fontTelkomsel.toString('base64');
     args.fontSemiBold = fontSemiBold.toString('base64');
     args.fontRegular = fontPoppinsRegularPath.toString('base64');
+    args.fontOble = fontOble.toString('base64');
+    
     const result = template(args);
     Pdfhtml.create(result, options).toBuffer(function (err, buffer) {
       if (err) {
