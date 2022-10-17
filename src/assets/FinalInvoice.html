@@ -49,7 +49,7 @@
             display: -ms-flexbox;
             display: flex;
             width: 1200px;
-            margin-left: 5rem;
+            margin-left: 4rem;
         }
 
         #left-logo {
@@ -335,7 +335,7 @@
             border-left: 21px solid #0E2237;
         }
         .big {
-            min-height: 18.5cm;
+            min-height: 19.17cm;
         }
     </style>
 </head>
@@ -398,24 +398,19 @@
                             <tbody>
                                 <tr>
                                     <td width="50">Tanggal Tagihan</td>
-                                    <td width="20">:</td>
-                                    <td>{{tanggalTagihan}}</td>
+                                    <td width="20">: {{tanggalTagihan}}</td>
                                 </tr>
                                 <tr>
-                                    <td width="70">No Tagihan</td>
-                                    <td width="20">:</td>
-                                    <td>
-                                        {{#if italicNoTagihan}}
-                                          <i>{{nomorTagihan}}</i>
-                                        {{else}}
-                                          {{nomorTagihan}}
-                                        {{/if}}
-                                    </td>
+                                    <td style="width: 25%;">No Tagihan</td>
+                                    <td width="20">: {{#if italicNoTagihan}}
+                                        <i>{{nomorTagihan}}</i>
+                                      {{else}}
+                                        {{nomorTagihan}}
+                                      {{/if}}</td>
                                 </tr>
                                 <tr>
                                     <td>BC</td>
-                                    <td>:</td>
-                                    <td>{{billingCycle}}</td>
+                                    <td>: {{billingCycle}}</td>
                                 </tr>
                             </tbody>
                         </table>
